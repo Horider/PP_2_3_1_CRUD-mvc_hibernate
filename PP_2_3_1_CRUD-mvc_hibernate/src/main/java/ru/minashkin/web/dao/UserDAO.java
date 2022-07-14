@@ -1,7 +1,5 @@
 package ru.minashkin.web.dao;
 
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import ru.minashkin.web.models.User;
 
 import java.util.List;
