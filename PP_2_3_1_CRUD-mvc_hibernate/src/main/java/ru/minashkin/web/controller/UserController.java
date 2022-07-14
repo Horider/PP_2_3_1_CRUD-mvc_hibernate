@@ -60,8 +60,7 @@ public class UserController {
                          @PathVariable("id") int id) {
         if (bindingResult.hasErrors())
             return "users/edit";
-
-        usersService.update(id, user);
+        usersService.update(user);
         return "redirect:/users";
     }
 

@@ -9,6 +9,7 @@ import ru.minashkin.web.models.User;
 import java.util.List;
 
 @Service
+@Transactional(readOnly = true)
 public class UsersServiceImpl implements UsersService {
 
     private final UserDAO userDAO;
@@ -29,16 +30,19 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
+    @Transactional
     public void save(User user) {
         userDAO.save(user);
     }
 
     @Override
-    public void update(int id, User userUpdate) {
-        userDAO.update(id, userUpdate);
+    @Transactional
+    public void update(User userUpdate) {
+        userDAO.update(userUpdate);
     }
 
     @Override
+    @Transactional
     public void delete(int id) {
         userDAO.delete(id);
     }

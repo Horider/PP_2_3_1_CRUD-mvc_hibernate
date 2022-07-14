@@ -13,9 +13,12 @@ public interface UsersService {
 
     User findOne(int id);
 
+    @Transactional
     void save(User user);
 
-    void update(int id, User userUpdate);
+    @Transactional
+    void update(User userUpdate);
 
+    @Transactional
     void delete(int id);
 }
